@@ -12,7 +12,7 @@ Connect/Express middleware for [xcss][].
     var xcss = require('connect-xcss');
 
     var app = express();
-    app.get('/bundle.css', xcss('./index.css, {debug: true}));
+    app.get('/bundle.css', xcss('./index.css', {debug: true}));
     app.listen(3000);
 
 [xcss]: https://github.com/andreypopp/xcss
