@@ -3,13 +3,12 @@
 var path                = require('path');
 var Bundler             = require('xcss').Bundler;
 var aggregate           = require('stream-aggregate-promise');
-var getCallsiteDirname  = require('get-callsite-dirname');
 
 function serve(entry, opts) {
   opts = opts || {};
 
   var logger = opts.logger || require('quiet-console');
-  var root = opts.root || getCallsiteDirname();
+  var basedir = opts.basedir || process.cwd();
 
   var bundler = (typeof entry.toStream === 'function') ?
     entry :
@@ -33,7 +32,7 @@ function serve(entry, opts) {
     var start = new Date;
 
     if (filename) {
-      logger.info('change detected in', path.relative(root, filename));
+      logger.info('change detected in', path.relative(basedir, filename));
     }
 
     server.bundle = aggregate(bundler.toStream());

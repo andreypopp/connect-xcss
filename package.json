@@ -29,7 +29,6 @@
   "dependencies": {
     "xcss": "~0.14.0",
     "stream-aggregate-promise": "~0.1.2",
-    "quiet-console": "~0.1.0",
-    "get-callsite-dirname": "~0.1.0"
+    "quiet-console": "~0.1.0"
   }
 }
