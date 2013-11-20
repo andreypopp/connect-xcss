@@ -4,6 +4,8 @@ var Bundler   = require('xcss').Bundler;
 var aggregate = require('stream-aggregate-promise');
 
 function serve(entry, opts) {
+  opts = opts || {};
+
   var bundler = (typeof entry.toStream === 'function') ?
     entry :
     new Bundler(entry, opts);
