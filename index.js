@@ -29,7 +29,7 @@ function serve(entry, opts) {
   return server;
 
   function build(filename) {
-    var start = new Date;
+    var start = new Date();
 
     if (filename) {
       logger.info('change detected in', path.relative(basedir, filename));
@@ -37,7 +37,7 @@ function serve(entry, opts) {
 
     server.bundle = aggregate(bundler.toStream());
     server.bundle.then(function() {
-      logger.info('bundle built in', new Date - start, 'ms');
+      logger.info('bundle built in', new Date() - start, 'ms');
     });
   }
 }
