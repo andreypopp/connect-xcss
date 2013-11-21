@@ -27,7 +27,7 @@
     "express": "~3.4.4"
   },
   "dependencies": {
-    "xcss": "~0.14.0",
+    "xcss": "~0.14.1",
     "stream-aggregate-promise": "~0.1.2",
     "quiet-console": "~0.1.0"
   }
